@@ -22,4 +22,6 @@ const Layout = ({ children }: Props) => {
 
 export default Layout;
 
-const Main = styled.main``;
+const Main = styled.main`
+    min-height: calc(100vh - 80px);
+`;
