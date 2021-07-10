@@ -1,10 +1,11 @@
 import React from "react";
+import Beranda from "../components/Beranda/Beranda";
 import Layout from "../layouts/Layout/Layout";
 
 const Home = () => {
     return (
         <Layout>
-            <h1>Title</h1>
+            <Beranda />
         </Layout>
     );
 };
