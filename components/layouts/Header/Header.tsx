@@ -3,7 +3,7 @@ import { MdMenu } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import {
     HeaderWrapper,
-    Container,
+    HeaderContainer,
     Nav,
     ItemLink,
     MobileNav,
@@ -11,17 +11,17 @@ import {
 } from "./Header.styles";
 
 import NavLink from "./NavLink/NavLink";
-import Icon from "../../shared/Icon/Icon";
+import Icon from "../../elements/Icon/Icon";
 import ImageLink from "./ImageLink/ImageLink";
-import logo from "../../assets/images/nore.png";
+import { LogoNore } from "../../../assets/images";
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
 
     return (
         <HeaderWrapper>
-            <Container>
-                <ImageLink src={logo} alt="Logo" />
+            <HeaderContainer>
+                <ImageLink src={LogoNore} alt="Logo" />
                 <Nav>
                     <NavLink href="/tentang">
                         <ItemLink>Tentang</ItemLink>
@@ -47,7 +47,7 @@ const Header = () => {
                         <MdMenu size="26px" color="white" />
                     </Icon>
                 </MobileNav>
-            </Container>
+            </HeaderContainer>
             <MobileMenu isOpen={isOpen}>
                 <Icon onClick={() => setOpen(false)}>
                     <MdClose size="26px" color="white" />

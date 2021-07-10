@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
-import DefaultContainer from "../../shared/Container/Container";
+import Container from "../../elements/Container/Container";
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.header`
     z-index: 99;
 `;
 
-export const Container = styled(DefaultContainer)`
+export const HeaderContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;

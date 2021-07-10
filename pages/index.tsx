@@ -1,11 +1,13 @@
 import React from "react";
-import Beranda from "../components/Beranda/Beranda";
-import Layout from "../layouts/Layout/Layout";
+import HeroSection from "../components/templates/Beranda/HeroSection/HeroSection";
+import ProdukSection from "../components/templates/Beranda/ProdukSection/ProdukSection";
+import Layout from "../components/layouts/Layout/Layout";
 
 const Home = () => {
     return (
         <Layout>
-            <Beranda />
+            <HeroSection />
+            <ProdukSection />
         </Layout>
     );
 };

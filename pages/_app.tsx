@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     body {
       padding: 0;
       margin: 0;
-      font-family: 'Poppins', 'Open-Sans', sans-serif;
+      font-family: 'Open-sans', sans-serif;
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
