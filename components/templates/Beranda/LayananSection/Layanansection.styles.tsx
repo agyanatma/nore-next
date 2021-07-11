@@ -20,14 +20,28 @@ export const LayananContainer = styled(Container)`
 export const LayananContent = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     column-gap: 40px;
+
+    ${media.lessThan("large")`
+        grid-template-columns: 1fr;
+
+        & ${LayananCardWrapper} {
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        & ${LayananCardPrice} {
+            width: 70%;
+            margin: 16px auto;
+        }
+    `}
 
     ${media.lessThan("medium")`
         grid-template-columns: 1fr;
 
         & ${LayananCardWrapper} {
-            width: 60%;
+            width: 80%;
             margin: 20px auto;
         }
 
