@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
+import { KlienImage } from "../../../../types/beranda";
 import AplikasiMobile from "../../../../assets/icons/AplikasiMobile";
 import IklanSem from "../../../../assets/icons/IklanSem";
 import PembuatanWebsite from "../../../../assets/icons/PembuatanWebsite";
@@ -14,19 +15,12 @@ import {
     ProdukWrapper,
     ProdukCarousel,
 } from "./ProdukSection.styles";
-import {
-    AntaraLogo,
-    CarfixLogo,
-    EastLogo,
-    HealthProjectLogo,
-    PolresLogo,
-    SanoriLogo,
-    VendorbeliLogo,
-} from "../../../../assets/images";
 
-interface Props {}
+interface Props {
+    klienImages: KlienImage[];
+}
 
-const ProdukSection = (props: Props) => {
+const ProdukSection = ({ klienImages }: Props) => {
     const responsive = useMemo(
         () => ({
             superLargeDesktop: {
@@ -84,126 +78,133 @@ const ProdukSection = (props: Props) => {
             <ProdukContainer>
                 <SectionHeader title="Klien Nore" />
                 <ProdukCarousel>
-                    <Carousel
-                        responsive={responsive}
-                        ssr={true} // means to render carousel on server-side.
-                        infinite={true}
-                        showDots={true}
-                        arrows={false}
-                        // autoPlay={true}
-                        // autoPlaySpeed={2000}
-                        containerClass="klien-carousel"
-                        itemClass="klien-item-carousel"
-                        dotListClass="klien-dots"
-                        beforeChange={() => setIsMoving(true)}
-                        afterChange={() => setIsMoving(false)}
-                    >
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                    {klienImages && (
+                        <Carousel
+                            responsive={responsive}
+                            ssr={true} // means to render carousel on server-side.
+                            infinite={true}
+                            showDots={true}
+                            arrows={false}
+                            // autoPlay={true}
+                            // autoPlaySpeed={2000}
+                            containerClass="klien-carousel"
+                            itemClass="klien-item-carousel"
+                            dotListClass="klien-dots"
+                            beforeChange={() => setIsMoving(true)}
+                            afterChange={() => setIsMoving(false)}
+                        >
+                            {klienImages.map((image) => (
+                                <Link key={image.id} href={image.link}>
+                                    <a
+                                        target="_blank"
+                                        draggable={false}
+                                        onClick={(e) =>
+                                            isMoving && e.preventDefault()
+                                        }
+                                    >
+                                        <Image
+                                            width="200px"
+                                            height="100px"
+                                            objectFit="contain"
+                                            draggable={false}
+                                            src={image.url}
+                                            alt={image.alt}
+                                        />
+                                    </a>
+                                </Link>
+                            ))}
+                            {/* <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={AntaraLogo}
-                                    alt="AntaraLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={CarfixLogo}
+                                        alt="CarfixLogo"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={CarfixLogo}
-                                    alt="CarfixLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={EastLogo}
+                                        alt="EastLogo"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={EastLogo}
-                                    alt="EastLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={HealthProjectLogo}
+                                        alt="HealthProjectLogo"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={HealthProjectLogo}
-                                    alt="HealthProjectLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={PolresLogo}
+                                        alt="PolresLogo"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={PolresLogo}
-                                    alt="PolresLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={SanoriLogo}
+                                        alt="SanoriLogo"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a
                                     draggable={false}
-                                    src={SanoriLogo}
-                                    alt="SanoriLogo"
-                                />
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a
-                                draggable={false}
-                                onClick={(e) => isMoving && e.preventDefault()}
-                            >
-                                <Image
-                                    width="200px"
-                                    height="100px"
-                                    objectFit="contain"
-                                    draggable={false}
-                                    src={VendorbeliLogo}
-                                    alt="VendorbeliLogo"
-                                />
-                            </a>
-                        </Link>
-                    </Carousel>
+                                    onClick={(e) => isMoving && e.preventDefault()}
+                                >
+                                    <Image
+                                        width="200px"
+                                        height="100px"
+                                        objectFit="contain"
+                                        draggable={false}
+                                        src={VendorbeliLogo}
+                                        alt="VendorbeliLogo"
+                                    />
+                                </a>
+                            </Link> */}
+                        </Carousel>
+                    )}
                 </ProdukCarousel>
             </ProdukContainer>
         </ProdukWrapper>
