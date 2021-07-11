@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Card from "../../../../elements/Card/Card";
 import {
-    Heading4,
     Heading5,
     Paragraph,
 } from "../../../../elements/Typhography/Typhography";

@@ -34,6 +34,15 @@ export const HeroCarousel = styled.div`
     padding: 24px;
     text-align: center;
 
+    & img {
+        cursor: move;
+        cursor: grab;
+
+        & :active {
+            cursor: grabbing;
+        }
+    }
+
     ${media.lessThan("medium")`
         width: 100%;
     `};

@@ -13,7 +13,13 @@ import {
     HeroContainer,
     HeroDivider,
 } from "./HeroSection.styles";
-import { NoreBook, NoreMoney, NoreMonitor, NoreRun } from "../../../../assets/images";
+import {
+    NoreLengkap,
+    NorePraktis,
+    NoreLangganan,
+    NoreCepat,
+    NoreTerjangkau,
+} from "../../../../assets/images";
 
 interface Props {}
 
@@ -48,9 +54,10 @@ const HeroSection = (props: Props) => {
                     <HeroSubtitle>
                         Tim Nore menyediakan layanan pembuatan website beserta
                         pemeliharaannya yang ditangani langsung oleh staf IT
-                        berpengalaman. Dengan biaya berlangganan yang terjangkau, Anda
-                        bisa mendapatkan layanan konsultasi, pembuatan website, pengubahan
-                        tampilan, pengelolaan konten, dan pemeliharaan server.
+                        berpengalaman. Dengan biaya berlangganan yang
+                        terjangkau, Anda bisa mendapatkan layanan konsultasi,
+                        pembuatan website, pengubahan tampilan, pengelolaan
+                        konten, dan pemeliharaan server.
                     </HeroSubtitle>
                     <HeroButtons>
                         <Button href="/layanan" variant="primary">
@@ -68,14 +75,34 @@ const HeroSection = (props: Props) => {
                         infinite={true}
                         showDots={false}
                         arrows={false}
-                        draggable={false}
-                        swipeable={false}
                         autoPlay={true}
+                        autoPlaySpeed={2000}
                     >
-                        <Image src={NoreBook} alt="NoreBook" />
-                        <Image src={NoreMoney} alt="NoreMoney" />
-                        <Image src={NoreMonitor} alt="NoreMonitor" />
-                        <Image src={NoreRun} alt="NoreRun" />
+                        <Image
+                            draggable={false}
+                            src={NoreLengkap}
+                            alt="NoreLengkap"
+                        />
+                        <Image
+                            draggable={false}
+                            src={NorePraktis}
+                            alt="NorePraktis"
+                        />
+                        <Image
+                            draggable={false}
+                            src={NoreLangganan}
+                            alt="NoreLangganan"
+                        />
+                        <Image
+                            draggable={false}
+                            src={NoreCepat}
+                            alt="NoreCepat"
+                        />
+                        <Image
+                            draggable={false}
+                            src={NoreTerjangkau}
+                            alt="NoreTerjangkau"
+                        />
                     </Carousel>
                 </HeroCarousel>
             </HeroContainer>

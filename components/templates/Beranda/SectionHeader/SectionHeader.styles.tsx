@@ -6,6 +6,7 @@ export const SectionHeaderWrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(3, auto);
     place-items: center;
+    margin-bottom: 38px;
 
     ${media.lessThan("medium")`
         text-align: center;

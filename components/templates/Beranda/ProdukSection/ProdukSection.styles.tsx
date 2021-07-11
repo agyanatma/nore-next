@@ -8,7 +8,13 @@ export const ProdukWrapper = styled.div`
     padding: 100px 26px;
 `;
 
-export const ProdukContainer = styled(Container)``;
+export const ProdukContainer = styled(Container)`
+    margin-bottom: 10rem;
+
+    & :last-child {
+        margin-bottom: 0px;
+    }
+`;
 
 export const ProdukContent = styled.div`
     display: grid;
@@ -22,4 +28,26 @@ export const ProdukContent = styled.div`
             max-width: 100%;
         }
     `}
+`;
+
+export const ProdukCarousel = styled.div`
+    & .klien-carousel {
+        padding-bottom: 5rem;
+    }
+    & .klien-item-carousel {
+        text-align: center;
+    }
+
+    & .klien-dots {
+        li.react-multi-carousel-dot button {
+            border: none;
+            width: 10px;
+            height: 10px;
+            margin-right: 16px;
+        }
+
+        & li.react-multi-carousel-dot--active button {
+            background: ${(props) => props.theme.primary};
+        }
+    }
 `;
