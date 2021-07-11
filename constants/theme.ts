@@ -3,7 +3,7 @@ const defaultTheme = {
     secondary: "#f2eb4d",
     dark: "#333333",
     light: "#f5f5f5",
-    grey: "#777777",
+    grey: "#9e9e9e",
 };
 
 export type ThemeType = typeof defaultTheme;

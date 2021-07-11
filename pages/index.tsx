@@ -13,6 +13,7 @@ import {
     SanoriLogo,
     VendorbeliLogo,
 } from "../assets/images";
+import LayananSection from "../components/templates/Beranda/LayananSection/LayananSection";
 
 interface StaticProps {
     klienImages: KlienImage[];
@@ -76,6 +77,7 @@ const Home = ({
         <Layout>
             <HeroSection />
             <ProdukSection klienImages={klienImages} />
+            <LayananSection />
         </Layout>
     );
 };

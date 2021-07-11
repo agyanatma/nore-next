@@ -11,6 +11,9 @@ import healthproject from "./healthproject-logo.png";
 import polres from "./polres-logo.png";
 import sanori from "./sanori-logo.png";
 import vendorbeli from "./vendorbeli-logo.png";
+import langganan from "./langganan.png";
+import mini from "./mini.png";
+import lepas from "./lepas.png";
 
 export const LogoNore = logoNore;
 export const NoreCepat = noreCepat;
@@ -25,3 +28,6 @@ export const HealthProjectLogo = healthproject;
 export const PolresLogo = polres;
 export const SanoriLogo = sanori;
 export const VendorbeliLogo = vendorbeli;
+export const Langganan = langganan;
+export const Mini = mini;
+export const Lepas = lepas;

@@ -2,6 +2,10 @@ import styled from "styled-components";
 import media from "styled-media-query";
 import { Heading2, Heading6 } from "../../../elements/Typhography/Typhography";
 
+type SectionHeaderTitle = {
+    color?: string;
+};
+
 export const SectionHeaderWrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(3, auto);
@@ -13,8 +17,8 @@ export const SectionHeaderWrapper = styled.div`
     `}
 `;
 
-export const SectionHeaderTitle = styled(Heading2)`
-    color: ${(props) => props.theme.primary};
+export const SectionHeaderTitle = styled(Heading2)<SectionHeaderTitle>`
+    color: ${(props) => props.color ?? props.theme.primary};
     font-weight: 800;
     text-transform: uppercase;
 
