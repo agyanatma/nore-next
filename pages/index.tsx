@@ -20,7 +20,7 @@ interface StaticProps {
 }
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-    // Fetch data from external API
+    // changes
     const klienImages: KlienImage[] = [
         {
             id: "1",
